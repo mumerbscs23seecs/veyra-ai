@@ -57,6 +57,7 @@ def web_search(query: str, max_results: int = 5) -> str:
 
 
 
+
 @mcp.tool()
 def read_webpage(url: str) -> str:
     """Fetch and return the readable text content of a webpage from a URL."""
