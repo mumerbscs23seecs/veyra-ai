@@ -892,17 +892,24 @@ body {
 /* ---- Mobile Responsiveness ---- */
 @media (max-width: 768px) {
   .nx {
+    position: fixed;
+    inset: 0;
     display: flex;
     flex-direction: column;
-  }
-
-  .nx-stage {
     height: 100dvh;
     overflow: hidden;
   }
 
+  .nx-stage {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
   .nx-rail {
-    display: flex !important; /* Override any other display rules */
+    display: flex !important;
     position: fixed;
     top: 0;
     left: -280px;
@@ -934,19 +941,82 @@ body {
   }
 
   .nx-feed {
-    padding: 24px 16px;
+    padding: 20px 14px;
+    overflow-y: auto !important;
   }
 
   .nx-composer {
-    padding: 12px 16px 16px;
+    padding: 10px 14px 14px;
   }
 
   .nx-msg {
-    max-width: 88%;
+    max-width: 92%;
   }
 
   .nx-badge {
     display: none;
+  }
+
+  .nx-hint {
+    display: none;
+  }
+
+  /* Welcome screen on mobile */
+  .nx-welcome {
+    padding: 24px 16px 20px;
+    gap: 8px;
+    justify-content: flex-start;
+    padding-top: 32px;
+  }
+
+  .nx-welcome-title {
+    font-size: 24px;
+  }
+
+  .nx-welcome-sub {
+    font-size: 13px;
+    margin: 0 0 6px;
+  }
+
+  .nx-feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .nx-feature-card {
+    padding: 14px 12px 12px;
+  }
+
+  .nx-feature-card h3 {
+    font-size: 12.5px;
+  }
+
+  .nx-feature-card p {
+    font-size: 11px;
+  }
+
+  .nx-feature-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+  }
+
+  /* Auth pages on mobile */
+  .auth-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nx-feature-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .nx-welcome-title {
+    font-size: 22px;
   }
 }
 
